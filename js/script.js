@@ -39,3 +39,21 @@ const scrolling = (upSelector) => {
 };
 
 scrolling(".pageupmain");
+
+function switchLang(lang)
+{
+    $("[data-" + lang + "]").text(function(i, e) {
+        return $(this).data(lang);
+    });
+}
+
+switchLang("en");
+
+$(".switchlang").click(function() {
+    $(this).text($(this).data("lang"));
+
+    var lang = $(this).data("lang") == "ru" ? "en" : "ru";
+    $(this).data("lang", lang);
+    switchLang(lang)
+    console.log("click")
+});
