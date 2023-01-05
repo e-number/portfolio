@@ -47,12 +47,12 @@ function switchLang(lang)
     });
 }
 
-switchLang("en");
+switchLang("ru");
 
 $(".switchlang").click(function() {
     $(this).text($(this).data("lang"));
 
-    var lang = $(this).data("lang") == "ru" ? "en" : "ru";
+    var lang = $(this).data("lang") == "en" ? "ru" : "en";
     $(this).data("lang", lang);
     switchLang(lang)
     console.log("click")
